@@ -5,6 +5,8 @@ import SuperEasyShare.provided.Car;
 import SuperEasyShare.provided.Customer;
 import SuperEasyShare.provided.DateTime;
 
+import java.util.Date;
+
 
 /**
  * A demo app.
@@ -64,7 +66,10 @@ public class Main {
 
 			new Trip(cars[3], customers[0], rates[6]), //
 
-			new Trip(cars[4], customers[0], rates[3]).start(new DateTime(2021, 1, 2, 3, 12)).end(new DateTime(2021, 1, 2, 3, 23), 10.2)
+			new Trip(cars[4],customers[0],rates[3]).start(new DateTime(2021,1,2,3,12)).end(new DateTime(2021,1,2,3,23),10.2)
+//			new Trip(cars[4], customers[0], rates[3]).
+//					start(new DateTime(2021, 1, 2, 3, 12)).
+//					end(new DateTime(2021, 1, 2, 3, 23), 10.2)
 	};
 
 	private static void tripTotal(Trip[] trips){
@@ -72,6 +77,7 @@ public class Main {
 			System.out.println(trip.toString() + " Total: " + trip.total() + " Duration: " + trip.duration());
 		}
 	}
+
 	private static void tabularPrint(Trip[] trips){
 		for(Trip trip : trips){
 			System.out.println(trip.toString());
@@ -94,6 +100,7 @@ public class Main {
 	public static void main(String[] args) {
 		//tabularPrint(trips);
 		tripTotal(trips);
+		//System.out.println(trips[7].getDistance());
 	}
 
 
