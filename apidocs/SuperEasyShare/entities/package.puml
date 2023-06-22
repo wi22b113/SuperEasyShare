@@ -1,0 +1,49 @@
+@startuml
+    namespace SuperEasyShare.entities {
+
+        class Trip [[Trip.html]] {
+            -car: Car
+            -renter: Customer
+            -startTime: DateTime
+            -endTime: DateTime
+            -status: TripStatus
+            -distance: double
+            +Trip(Car, Customer, Rate)
+            +Trip(Car, Customer, Rate, DateTime)
+            +Trip(Car, Customer, Rate, DateTime, DateTime, double)
+            +Trip(Trip)
+            +start(DateTime): Trip
+            +end(DateTime, double): Trip
+            +total(): int
+            +getStartTime(): DateTime
+            +getEndTime(): DateTime
+            +getDistance(): double
+            +getStatus(): TripStatus
+            +duration(): int
+        }
+
+        class PerMinuteRate [[PerMinuteRate.html]] {
+            -perMinute: int
+            +PerMinuteRate(int)
+            +total(Trip): int
+        }
+
+        abstract class Rate [[Rate.html]] {
+            {abstract} +total(Trip): int
+        }
+
+        class LongTermRate [[LongTermRate.html]] {
+            -baseDuration: int
+            -baseAmount: int
+            -perDay: int
+            +LongTermRate(int, int)
+            +total(Trip): int
+        }
+
+        Trip --> Rate: rate
+        Rate <|-- PerMinuteRate
+        Rate <|-- LongTermRate
+    }
+
+    center footer UMLDoclet 2.1.0, PlantUML %version()
+@enduml

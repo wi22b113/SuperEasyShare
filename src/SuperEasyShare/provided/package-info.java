@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+package SuperEasyShare.provided;

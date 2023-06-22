@@ -1,0 +1,21 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>LongTermRate\n<size:10>SuperEasyShare.entities" as SuperEasyShare.entities.LongTermRate [[LongTermRate.html]] {
+        -baseDuration: int
+        -baseAmount: int
+        -perDay: int
+        +LongTermRate(int, int)
+        +total(Trip): int
+    }
+
+    abstract class "<size:14>Rate\n<size:10>SuperEasyShare.entities" as SuperEasyShare.entities.Rate [[Rate.html]] {
+        {abstract} +total(Trip): int
+    }
+
+    SuperEasyShare.entities.Rate <|-- SuperEasyShare.entities.LongTermRate
+
+    center footer UMLDoclet 2.1.0, PlantUML %version()
+@enduml

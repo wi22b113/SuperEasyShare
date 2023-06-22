@@ -1,0 +1,16 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Main\n<size:10>SuperEasyShare.app" as SuperEasyShare.app.Main [[Main.html]] {
+        {static} -cars: Car[]
+        {static} -customers: Customer[]
+        {static} -rates: Rate[]
+        {static} -trips: Trip[]
+        {static} +main(String[]): void
+        {static} -tabularPrint(Trip[]): void
+    }
+
+    center footer UMLDoclet 2.1.0, PlantUML %version()
+@enduml

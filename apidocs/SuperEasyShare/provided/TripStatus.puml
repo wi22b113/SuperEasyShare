@@ -1,0 +1,13 @@
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    enum "<size:14>TripStatus\n<size:10>SuperEasyShare.provided" as SuperEasyShare.provided.TripStatus [[TripStatus.html]] {
+        {static} +CREATED
+        {static} +STARTED
+        {static} +COMPLETED
+    }
+
+    center footer UMLDoclet 2.1.0, PlantUML %version()
+@enduml

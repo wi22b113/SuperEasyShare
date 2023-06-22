@@ -1,0 +1,21 @@
+@startuml
+    skinparam backgroundcolor transparent
+    set namespaceSeparator none
+    hide circle
+    hide empty fields
+    hide empty methods
+
+    SuperEasyShare.app --> SuperEasyShare.provided
+    SuperEasyShare.app --> SuperEasyShare.entities
+    SuperEasyShare.entities --> SuperEasyShare.provided
+
+    ' Package links
+    class "SuperEasyShare.app" [[SuperEasyShare/app/package-summary.html]] {
+    }
+    class "SuperEasyShare.provided" [[SuperEasyShare/provided/package-summary.html]] {
+    }
+    class "SuperEasyShare.entities" [[SuperEasyShare/entities/package-summary.html]] {
+    }
+
+    center footer UMLDoclet 2.1.0, PlantUML %version()
+@enduml
